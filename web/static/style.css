@@ -1,0 +1,46 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: #1a1a2e; color: #e0e0e0; }
+nav { display: flex; align-items: center; gap: 16px; padding: 12px 20px; background: #16213e; border-bottom: 1px solid #0f3460; }
+.nav-title { font-size: 18px; font-weight: 600; color: #e94560; }
+.tabs { display: flex; gap: 4px; }
+.tab { padding: 6px 16px; border: none; background: transparent; color: #a0a0a0; cursor: pointer; border-radius: 4px; font-size: 14px; }
+.tab.active { background: #0f3460; color: #fff; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; background: #666; margin-left: auto; }
+.status-dot.online { background: #4caf50; }
+main { padding: 16px 20px; max-width: 1200px; margin: 0 auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.toolbar { display: flex; gap: 8px; margin-bottom: 16px; align-items: center; }
+.toolbar input[type="date"] { padding: 6px 10px; border: 1px solid #0f3460; border-radius: 4px; background: #16213e; color: #e0e0e0; }
+.toolbar button, .back-btn { padding: 6px 14px; border: none; background: #e94560; color: #fff; border-radius: 4px; cursor: pointer; font-size: 13px; }
+.toolbar button:hover, .back-btn:hover { background: #c73650; }
+
+/* Timeline */
+.timeline-bar { height: 48px; background: #16213e; border-radius: 6px; margin-bottom: 16px; position: relative; overflow: hidden; }
+.timeline-bar .motion-block { position: absolute; top: 0; height: 30px; background: #0f3460; border-radius: 3px; opacity: 0.8; cursor: pointer; }
+.timeline-bar .face-mark { position: absolute; top: 32px; width: 14px; height: 14px; background: #e94560; border-radius: 50%; cursor: pointer; transform: translateX(-7px); }
+.timeline-bar .hour-label { position: absolute; bottom: 2px; font-size: 9px; color: #666; transform: translateX(-50%); }
+#player-container { background: #000; border-radius: 6px; overflow: hidden; }
+#player { width: 100%; max-height: 60vh; }
+
+/* Recordings */
+.card-list { display: flex; flex-direction: column; gap: 8px; }
+.rec-card { display: flex; align-items: center; gap: 12px; padding: 12px; background: #16213e; border-radius: 6px; cursor: pointer; }
+.rec-card:hover { background: #1a2744; }
+.rec-card .time { font-size: 15px; font-weight: 500; min-width: 80px; }
+.rec-card .meta { font-size: 12px; color: #888; }
+.rec-card .faces-badge { margin-left: auto; background: #e94560; color: #fff; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+
+/* Faces */
+.face-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.face-card { background: #16213e; border-radius: 8px; padding: 8px; text-align: center; cursor: pointer; }
+.face-card:hover { background: #1a2744; }
+.face-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; background: #0a0a1a; }
+.face-card .label { margin-top: 6px; font-size: 13px; }
+.face-card .count { font-size: 11px; color: #888; }
+.face-card input { width: 100%; padding: 3px 6px; margin-top: 4px; border: 1px solid #0f3460; border-radius: 3px; background: #1a1a2e; color: #e0e0e0; font-size: 12px; text-align: center; }
+.face-detail { margin-top: 12px; }
+.face-events { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; margin-top: 12px; }
+.face-event { background: #16213e; border-radius: 6px; padding: 8px; font-size: 12px; }
+.face-event img { width: 100%; border-radius: 4px; margin-bottom: 4px; }
+.no-data { text-align: center; color: #666; padding: 40px; }

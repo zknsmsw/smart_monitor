@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能监控</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-title">智能监控</div>
+        <div class="tabs">
+            <button class="tab active" data-tab="timeline">时间轴</button>
+            <button class="tab" data-tab="recordings">录像</button>
+            <button class="tab" data-tab="faces">人脸</button>
+        </div>
+        <div id="status-indicator" class="status-dot" title="系统状态"></div>
+    </nav>
+
+    <main>
+        <!-- Timeline Tab -->
+        <section id="tab-timeline" class="tab-content active">
+            <div class="toolbar">
+                <input type="date" id="timeline-date">
+                <button onclick="loadTimeline()">加载</button>
+            </div>
+            <div id="timeline-bar" class="timeline-bar"></div>
+            <div id="player-container">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+                    <div>
+                        <div style="margin-bottom:8px; font-weight:600;">直播</div>
+                        <img id="live-view" src="/live" alt="live" style="width:100%; background:#000; border-radius:8px;">
+                    </div>
+                    <div>
+                        <div style="margin-bottom:8px; font-weight:600;">回放</div>
+                        <video id="player" controls playsinline></video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recordings Tab -->
+        <section id="tab-recordings" class="tab-content">
+            <div class="toolbar">
+                <input type="date" id="rec-date">
+                <button onclick="loadRecordings()">加载</button>
+            </div>
+            <div id="rec-list" class="card-list"></div>
+        </section>
+
+        <!-- Faces Tab -->
+        <section id="tab-faces" class="tab-content">
+            <div id="face-grid" class="face-grid"></div>
+            <div id="face-detail" class="face-detail" style="display:none">
+                <button class="back-btn" onclick="closeFaceDetail()">&larr; 返回</button>
+                <div id="face-detail-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

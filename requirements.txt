@@ -1,0 +1,5 @@
+# 设备端依赖 (oec-turbo / RK3566)
+flask>=3.0
+opencv-python-headless>=4.8
+numpy>=1.24
+# rknn-toolkit-lite2 需要单独用 wheel 安装，见 setup.sh
